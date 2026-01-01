@@ -194,7 +194,7 @@ header {
 
   box-shadow: 0 4px 12px rgba(0,0,0,.15);
   /* ⭐ FIX QUAN TRỌNG */
-  right: calc(50% - 360px + 16px);
+  right: calc(50% - 285px + 16px);
 }
 
 
@@ -1637,6 +1637,12 @@ header {
     --spread: clamp(0px, 1vw, 0px);
   }
 }
+@media (max-width: 570px) {
+  .music-btn {
+    right: 16px;
+  }
+}
+
 
 /* =====================================================
    DESKTOP / LAPTOP
