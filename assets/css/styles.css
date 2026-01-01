@@ -51,7 +51,7 @@ header {
 .hero-image {
   position: absolute;
   inset: 0;
-  width: 130%; 
+  width: 120%; 
   height: 100%;
   object-fit: cover;
   filter: brightness(1); /*Chỉnh sáng tối cho ảnh*/
@@ -234,7 +234,7 @@ header {
   gap: 12px;                       /* khoảng cách GIỮA các khối */
 
   /* --- Color --- */
-  color: #d14040;                  /* màu chữ mặc định trong hero */
+  color: #c91717;                  /* màu chữ mặc định trong hero */
 }
 
 /* ------------------------------------------------
@@ -277,7 +277,7 @@ header {
   align-items: center;
   text-align: center;
 
-  font-family: 'Literata', serif;
+  font-family: 'Playfair', serif;
   font-size: clamp(26px, 5vw, 56px);
   line-height: 1.15;
 
