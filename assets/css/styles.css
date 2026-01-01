@@ -32,8 +32,7 @@ header {
 
 .hero {
   position: relative;
-  max-width: 720px;
-  height: min(90vh, 720px);             /* CHỈNH: thay 150vh → 100vh */
+  height: 90vh;            /* CHỈNH: thay 150vh → 100vh */
   min-height: 500px;
   display: flex;
   align-items: center;
@@ -973,7 +972,7 @@ header {
 .calendar-section {
   position: relative;
   /* ⬇️ GIẢM CHIỀU CAO Ở ĐÂY */
-  height: min(90vh, 600px);
+  height: 90vh;
   overflow: hidden;
 }
 
