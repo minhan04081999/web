@@ -1055,7 +1055,7 @@ header {
   height: 34px;
   pointer-events: none;
   z-index: 5;
-  transform: translate(-2px, -2px); /* tim ôm số */
+  transform: translate(1px, 0px); /* tim ôm số */
 }
 
 .calendar-slogan {
