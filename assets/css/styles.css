@@ -270,39 +270,33 @@ header {
 ============================== */
 
 .hero .couple-names {
-  --spread: 0px; /* mặc định: KHÔNG tách */
-
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  display: flex;
   align-items: center;
-  text-align: center;
+  justify-content: center;
+  gap: clamp(10px, 2vw, 20px);
 
   font-family: 'Playfair', serif;
   font-size: clamp(26px, 5vw, 56px);
   line-height: 1.15;
-
   white-space: nowrap;
 }
 
-/* dấu & LUÔN Ở GIỮA */
-.hero .couple-names .and {
-  grid-column: 2;
-  font-weight: 400;
-}
-
-/* tên trên (MINH ÂN) → dịch sang PHẢI khi đủ chỗ */
+/* Minh Ân */
 .hero .couple-names .bride {
-  grid-column: 3;
-  justify-self: start;
-  transform: translateX(var(--spread));
+  font-weight: 500;
 }
 
-/* tên dưới (THU KHA) → dịch sang TRÁI khi đủ chỗ */
-.hero .couple-names .groom {
-  grid-column: 1;
-  justify-self: end;
-  transform: translateX(calc(-1 * var(--spread)));
+/* dấu & */
+.hero .couple-names .and {
+  font-weight: 400;
+  opacity: 0.8;
 }
+
+/* Thu Kha */
+.hero .couple-names .groom {
+  font-weight: 500;
+}
+
 
 
 /* ------------------------------------------------
