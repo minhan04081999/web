@@ -1,0 +1,1706 @@
+/* ===== PAGE WRAPPER (FIX MAX WIDTH) ===== */
+body {
+  margin: 0;
+  background: #ffffff; /* phần dư 2 bên */
+  display: flex;
+  justify-content: center;
+}
+
+.page-wrapper {
+  width: 100%;
+  max-width: 720px;     /* 🔒 FIX SIZE TỐI ĐA */
+  min-height: 100vh;
+  background: #fff;
+  box-shadow: 0 0 40px rgba(0,0,0,0.06);
+}
+
+
+/* #############################################################################################################################
+    RESET
+############################################################################################################################# */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html,body { height: 100%; font-family: system-ui, -apple-system, "Segoe UI"; color:#222; }
+
+/* #############################################################################################################################
+    HEADER
+############################################################################################################################# */
+header {
+  position: relative;
+  width: 100%;
+  min-height: 100svh;
+}
+
+.hero {
+  position: relative;
+  max-width: 720px;
+  height: 100vh;             /* CHỈNH: thay 150vh → 100vh */
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  margin: 0 auto;
+}
+.overlay {
+  position: absolute; inset:0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.25), rgba(0,0,0,0.45));
+}
+/* ---------------------------------------------------------------------------
+  HERO BACKGROUND IMAGE
+--------------------------------------------------------------------------- */
+.hero-image {
+  position: absolute;
+  inset: 0;
+  width: 130%; 
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(1); /*Chỉnh sáng tối cho ảnh*/
+}
+/* ---------------------------------------------------------------------------
+  LOVE DAYS COUNTER
+--------------------------------------------------------------------------- */
+.love-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1;
+}
+
+#lovendays {
+  font-size: 17px;
+  font-weight: 700;
+}
+
+#lovetext {
+  font-size: 11px;
+  letter-spacing: 1px;
+  margin-top: 2px;
+}
+
+.love-heart {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 90px;
+  height: 80px;
+
+  transform: scale(0.6);
+  transform-origin: top left;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  animation: heartBeat 1.2s infinite ease-in-out;
+}
+
+.heart-svg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.heart-svg path {
+  filter: drop-shadow(0 6px 12px rgba(212,22,44,0.35));
+}
+
+@keyframes heartBeat {
+  0%   { transform: scale(0.95); }
+  50%  { transform: scale(1.05); }
+  100% { transform: scale(0.95); }
+}
+
+.love-heart span {
+  position: relative;
+  color: #d4162c;
+  font-size: 22px;
+  font-weight: 700;
+  transform: translateY(-6px);
+}
+
+/* ------------ animation ---------- */
+@keyframes heartBeat {
+  0%   { transform: scale(0.55) }
+  50%  { transform: scale(0.60) }
+  100% { transform: scale(0.55) }
+}
+
+.love-heart span {
+  color: #d4162c;      /* đỏ cùng màu viền */
+  font-size: 22px;
+  font-weight: 700;
+  transform: translateY(-6px);
+}
+
+/* ----- Falling heart animation--- */
+.falling-heart {
+  position: fixed;
+  top: -60px;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+
+  color: #eb0124;
+  font-size: 20px;
+  opacity: 0.9;
+
+  filter: drop-shadow(0 3px 4px rgba(0,0,0,0.25));
+
+  animation:
+    fall var(--fall-duration) linear forwards,
+    sway var(--sway-duration) ease-in-out infinite,
+    rotate var(--rotate-duration) ease-in-out infinite;
+}
+
+/* Falling */
+@keyframes fall {
+  to {
+    transform: translateY(120vh);
+    opacity: 0;
+  }
+}
+
+/* GIÓ THỔI QUA LẠI */
+@keyframes sway {
+  0%   { margin-left: 0; }
+  50%  { margin-left: var(--sway-distance); }
+  100% { margin-left: 0; }
+}
+
+/* XOAY NHẸ */
+@keyframes rotate {
+  0%   { rotate: 0deg; }
+  50%  { rotate: var(--rotate-angle); }
+  100% { rotate: 0deg; }
+}
+
+/* ---------------------------------------------------------------------------
+  MUSIC BUTTON
+--------------------------------------------------------------------------- */
+.music-btn {
+  position: fixed;
+  top: 16px;
+  z-index: 999;
+
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 4px 12px rgba(0,0,0,.15);
+  /* ⭐ FIX QUAN TRỌNG */
+  right: calc(50% - 360px + 16px);
+}
+
+
+/* Icon đĩa */
+#disc-icon {
+  width: 25px;
+  height: 25px;
+  animation: spinDisc 4s linear infinite;
+  animation-play-state: running;     /* QUAN TRỌNG */
+}
+
+/* Khi tắt nhạc — icon dừng xoay */
+.music-btn.paused #disc-icon {
+  animation-play-state: paused;      /* QUAN TRỌNG */
+  opacity: .5;
+}
+
+/* Animation quay */
+@keyframes spinDisc {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* ---------------------------------------------------------------------------
+  HERO TEXT CONTENT
+--------------------------------------------------------------------------- */
+.wedding-style {
+  /* --- Position & layout --- */
+  position: absolute;              /* định vị hero content theo hero */
+  top: 60%;                        /* dịch toàn bộ cụm lên / xuống */
+  left: 50%;                       /* canh giữa theo trục ngang */
+  transform: translate(-50%, -45%);/* cân lại tâm hiển thị */
+
+  display: flex;                   /* dùng flex để xếp các khối con */
+  flex-direction: column;          /* xếp theo cột (trên → dưới) */
+  align-items: center;             /* canh giữa ngang các khối */
+
+  gap: 12px;                       /* khoảng cách GIỮA các khối */
+
+  /* --- Color --- */
+  color: #d14040;                  /* màu chữ mặc định trong hero */
+}
+
+/* ------------------------------------------------
+   WE GET MARRIED – SCRIPT DECORATION
+------------------------------------------------ */
+.we-get-married {
+  /* --- Font --- */
+  font-family: 'Passions Conflict', cursive; /* font viết tay trang trí */
+
+  /* --- Text size & weight --- */
+  font-size: clamp(50px, 4.5vw, 48px);       /* size chữ responsive */
+  font-weight: 400;                          /* độ đậm chữ */
+
+  /* --- Text style --- */
+  letter-spacing: 1px;                       /* giãn chữ */
+  opacity: 0.95;                             /* độ mờ nhẹ */
+
+  /* --- Position --- */
+  position: relative;                        /* cho phép dịch bằng top/left */
+  left: 0;
+  top: 0;
+  transform: translate(10vw, -12vh) rotate(-12deg);
+
+  /* --- Spacing --- */
+  margin-bottom: 6px;                        /* khoảng cách với tên */
+
+  /* --- Text behavior --- */
+  white-space: nowrap;                       /* không cho xuống dòng */
+}
+
+/* ==============================
+   HERO – COUPLE NAMES LAYOUT
+============================== */
+
+.hero .couple-names {
+  --spread: 0px; /* mặc định: KHÔNG tách */
+
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  text-align: center;
+
+  font-family: 'Literata', serif;
+  font-size: clamp(26px, 5vw, 56px);
+  line-height: 1.15;
+
+  white-space: nowrap;
+}
+
+/* dấu & LUÔN Ở GIỮA */
+.hero .couple-names .and {
+  grid-column: 2;
+  font-weight: 400;
+}
+
+/* tên trên (MINH ÂN) → dịch sang PHẢI khi đủ chỗ */
+.hero .couple-names .bride {
+  grid-column: 3;
+  justify-self: start;
+  transform: translateX(var(--spread));
+}
+
+/* tên dưới (THU KHA) → dịch sang TRÁI khi đủ chỗ */
+.hero .couple-names .groom {
+  grid-column: 1;
+  justify-self: end;
+  transform: translateX(calc(-1 * var(--spread)));
+}
+
+
+/* ------------------------------------------------
+   NGÀY CƯỚI
+------------------------------------------------ */
+.wedding-date {
+  /* --- Text size & weight --- */
+  font-size: clamp(15px, 2vw, 18px);          /* size ngày */
+  font-weight: 400;                           /* độ đậm */
+
+  /* --- Text style --- */
+  letter-spacing: 1px;                        /* giãn chữ */
+
+  /* --- Transform --- */
+  transform: translate(0, 6vh);          /* đẩy ngày xuống dưới */
+
+  /* --- Text behavior --- */
+  white-space: nowrap;                        /* không bao giờ xuống dòng */
+}
+
+/* ------------------------------------------------
+   CÂU PHỤ – SAU NGÀY CƯỚI
+------------------------------------------------ */
+.hero-footer {
+  position: absolute;
+  left: 50%;
+  bottom: 10px;              /* ✅ countdown cách đáy 10px */
+  transform: translateX(-50%);
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  z-index: 9999;
+}
+
+
+.info-sentences {
+  font-family: 'Passions Conflict', cursive;
+  font-size: clamp(30px, calc(1rem + 2vw), 34px);
+  letter-spacing: 1px;
+  opacity: 0.9;
+  text-align: center;
+  white-space: normal;
+  margin: 0;
+}
+
+/* ##############################################################################################################################################
+   HERO CONTENT (CONTAINER CHÍNH)
+############################################################################################################################################## */
+
+
+/* ==============================================================================================================
+   COUNTDOWN
+============================ */
+.hero-countdown {
+  position: relative;        /* ❌ không absolute */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  opacity: 0.4;
+}
+
+
+.timer {
+  display:flex;
+  justify-content:center;
+  gap:1rem;
+  margin-top:1rem;
+}
+.timer div {
+  background: rgba(0,0,0,0.5);
+  padding: clamp(6px, 2vw, 14px) clamp(8px, 3vw, 18px);
+  border-radius: clamp(6px, 2vw, 10px);
+  min-width: clamp(44px, 12vw, 70px);
+  color: #fff;
+}
+.timer span {
+  display: block;
+  font-size: clamp(16px, 6vw, 32px);
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* ##############################################################################################################################################
+   MAIN
+############################################################################################################################################## */
+/* ============================
+   BUTTON
+============================ */
+.actions {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.actions .btn {
+    padding: 12px 22px;
+    border-radius: 50px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+}
+
+.actions .primary {
+    background: #d34d55;
+    color: white;
+}
+
+.actions .secondary {
+    background: white;
+    border: 2px solid #d34d55;
+    color: #d34d55;
+}
+
+/* ================================================================================================
+   SAVE THE DATE – SECTION CHÍNH
+================================================================================================ */
+.save-date-section {
+  /* --- Spacing --- */
+  padding: 20px 20px;              /* khoảng đệm toàn section */
+
+  /* --- Text alignment --- */
+  text-align: center;              /* canh giữa toàn bộ chữ */
+
+  /* --- Font --- */
+  font-family: "Georgia", serif;   /* font nền trang trọng */
+}
+
+/* ------------------------------------------------
+   SAVE – THE – DATE (KHỐI TRANG TRÍ)
+------------------------------------------------ */
+.save-the-date {
+  /* --- Layout --- */
+  display: flex;                   /* dùng flex */
+  flex-direction: column;          /* xếp chữ theo cột */
+  align-items: center;             /* canh giữa ngang */
+
+  gap: 0px;                        /* không giãn dòng */
+
+  /* --- Spacing --- */
+  margin-top: 5px;                 /* cách phía trên nhẹ */
+
+  /* --- Font --- */
+  font-family: "Cormorant Garamond", serif;
+}
+
+/* ------------------------------------------------
+   CHỮ CHUNG: SAVE / THE / DATE
+------------------------------------------------ */
+.save-the-date .line {
+  /* --- Text size & weight --- */
+  font-size: 10vw;                 /* size lớn theo màn hình */
+  font-weight: 700;                /* chữ đậm */
+
+  /* --- Text style --- */
+  letter-spacing: 4px;             /* giãn chữ */
+  color: #610d0d;                  /* màu chữ */
+  text-shadow: 0 3px 20px rgba(0,0,0,0.3); /* đổ bóng */
+}
+
+/* ------------------------------------------------
+   SAVE (LỆCH TRÁI)
+------------------------------------------------ */
+.save {
+  /* --- Transform --- */
+  transform: translateX(-50px);    /* đẩy sang trái */
+}
+
+/* ------------------------------------------------
+   THE (CHỮ NHỎ – Ở GIỮA)
+------------------------------------------------ */
+.save-the-date .the {
+  /* --- Text size --- */
+  font-size: 28px;                 /* CHỈNH TO / NHỎ TẠI ĐÂY */
+
+  /* --- Transform --- */
+  transform: translateX(-40px);    /* căn cùng trục với SAVE */
+}
+
+/* ------------------------------------------------
+   DATE (LỆCH PHẢI)
+------------------------------------------------ */
+.date {
+  /* --- Transform --- */
+  text-align: center;
+}
+
+/* ------------------------------------------------
+   KHỐI 2 BÊN GIA ĐÌNH
+------------------------------------------------ */
+.families {
+  /* --- Layout --- */
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: start;
+
+  /* --- Size & alignment --- */
+  width: 100%;                     /* full mobile */
+  max-width: 520px;                /* giữ đẹp trên PC */
+  margin: 0 auto 25px;             /* căn giữa */
+
+  gap: clamp(12px, 4vw, 40px);     /* khoảng cách responsive */
+
+  /* --- Spacing --- */
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* ------------------------------------------------
+   ĐƯỜNG CHIA GIỮA
+------------------------------------------------ */
+.divider {
+  /* --- Size --- */
+  width: 1px;
+
+  /* --- Style --- */
+  background: #444;
+  opacity: 0.5;
+
+  /* --- Layout --- */
+  align-self: stretch;             /* cao bằng 2 cột */
+}
+
+/* ------------------------------------------------
+   MỖI BÊN GIA ĐÌNH
+------------------------------------------------ */
+.family {
+  text-align: center;
+  min-width: 0;                    /* chống vỡ layout grid */
+}
+
+/* ------------------------------------------------
+   TIÊU ĐỀ NHÀ GÁI / NHÀ TRAI
+------------------------------------------------ */
+.family h3 {
+  /* --- Text size & weight --- */
+  font-size: clamp(15px, 3.5vw, 20px);
+  font-weight: 700;
+
+  /* --- Spacing --- */
+  margin-bottom: 13px;
+}
+
+/* ------------------------------------------------
+   THÔNG TIN PHỤ HUYNH
+------------------------------------------------ */
+.family p {
+  /* --- Font --- */
+  font-family: "Roboto", sans-serif;
+
+  /* --- Text size --- */
+  font-size: clamp(14px, 3.5vw, 20px);
+
+  /* --- Text style --- */
+  line-height: 1.2;
+
+  /* --- Spacing --- */
+  margin-bottom: 4px;
+}
+
+/* ------------------------------------------------
+   DÒNG CHỮ MỜI
+------------------------------------------------ */
+.invite-text {
+  /* --- Font --- */
+  font-family: "Goldman", sans-serif;
+
+  /* --- Text size --- */
+  font-size: clamp(14px, 3vw, 18px);
+
+  /* --- Color --- */
+  color: #444;
+
+  /* --- Spacing --- */
+  margin: 30px 0 20px;
+}
+/* ======================================
+   COUPLE NAME – KHỐI CHÍNH
+====================================== */
+.name {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+.name .title {
+  font-family: "Playfair Display", serif; /* font trang trọng */
+  font-size: clamp(14px, 3vw, 18px);
+  letter-spacing: 1px;
+  color: #555;
+}
+.name .fullname {
+  font-family: "Cookie", cursive; /* font chữ ký */
+  font-size: clamp(26px, 6vw, 36px);
+  font-weight: 400;
+  color: #000;
+}
+
+.couple-name {
+  /* Layout tổng */
+  display: flex;                         /* xếp các cụm theo cột */
+  flex-direction: column;               /* cô dâu trên – chú rể dưới */
+  gap: 0px;                            /* khoảng cách giữa 2 người */
+
+  /* Giới hạn chiều rộng */
+  width: 100%;
+  max-width: 520px;                     /* không vỡ trên laptop */
+  margin: 0 auto;                       /* căn giữa */
+}
+
+/* ======================================
+   CỤM MỖI NGƯỜI (ẢNH + TÊN)
+====================================== */
+.person {
+  /* Layout */
+  display: flex;                        /* xếp ngang ảnh – tên */
+  align-items: center;                 /* canh giữa theo trục dọc */
+
+  /* Cho phép dịch chuyển độc lập */
+  position: relative;
+}
+
+/* ======================================
+   ẢNH (DÙNG CHUNG)
+====================================== */
+.photo {
+  /* Kích thước */
+  width: 110px;
+  height: 150px;
+
+  /* Hình dạng */
+  border-radius: 22px;
+  overflow: hidden;
+
+  /* Không co giãn */
+  flex-shrink: 0;
+}
+
+/* Ảnh bên trong */
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;                   /* giữ tỉ lệ ảnh */
+}
+
+/* ======================================
+   TÊN (DÙNG CHUNG)
+====================================== */
+.name {
+  /* Font */
+  font-family: "Cookie", cursive;
+
+  /* Kích thước chữ */
+  font-size: clamp(22px, 5vw, 32px);
+
+  /* Kiểu chữ */
+  font-weight: 400;
+  color: #000;
+  letter-spacing: 1px;
+
+  /* Không rớt dòng */
+  white-space: nowrap;
+}
+
+/* ======================================
+   CÔ DÂU – ẢNH TRÁI | TÊN PHẢI
+====================================== */
+.photo {
+  width: 160px;        /* ⬅️ tăng số này để ảnh to hơn */
+  height: 200px;       /* ⬅️ giữ tỉ lệ dọc cho ảnh chân dung */
+  overflow: hidden;
+  border-radius: 20px; /* bo góc mềm */
+}
+
+.person.groom {
+  justify-content: flex-start;
+  margin-left: 50px;   /* ✅ KHÔNG gây overflow */
+  transform: none;
+}
+
+/* Khoảng cách ảnh – tên cô dâu */
+.groom-name {
+  margin-left: 16px;                   /* tên cách ảnh */
+}
+
+/* Viền ảnh cô dâu */
+.groom-photo {
+  border:2px solid #bfbfbf;
+}
+
+/* ======================================
+   CHÚ RỂ – TÊN TRÁI | ẢNH PHẢI
+====================================== */
+.person.bride {
+  justify-content: flex-end;            /* canh phải cụm */
+
+  /* 🔄 DỊCH RIÊNG CỤM CHÚ RỂ */
+  transform: translate(-40px, 0px);
+}
+
+/* Khoảng cách tên – ảnh chú rể */
+.bride-name {
+  margin-right: 16px;
+}
+
+/* Viền ảnh chú rể */
+.bride-photo {
+  border: 2px solid #bfbfbf;
+}
+
+
+
+/* ===========================================================================
+     CARD SECTION
+   =========================================================================== */
+
+.invite-sentences {
+  text-align: center;
+  /* --- Font --- */
+  font-family: "Goldman", sans-serif;
+
+  /* --- Text size --- */
+  font-size: clamp(20px, 3vw, 18px);
+
+  /* --- Color --- */
+  color: #000000;
+
+  /* --- Spacing --- */
+  margin: 20px 0 0px;
+}
+
+/* Màn hình rộng → Hai thẻ nằm cạnh nhau */
+@media (min-width: 860px) {
+    .invitation-section {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.invite-card {
+    border-radius: 20px;
+    background: #7c0a0a;
+    padding: 25px;
+    color: #fff;
+    text-align: center;
+    box-shadow: 0 5px 12px rgba(0,0,0,0.15);
+    max-width: 700px;   /* chỉnh bề ngang tối đa của hình chữ nhật */
+    width: 90%;         /* tự co khi màn hình nhỏ */
+    margin: 0.5rem auto; 
+}
+
+.invite-card .title {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.invite-card .subtitle {
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+.invite-card .date {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+
+    font-size: 36px;
+    font-weight: 700;
+    color: #ffeb3b;
+
+    margin: 12px 0;
+}
+
+.invite-card .date span {
+    display: inline-block;
+    min-width: 2ch;      /* QUAN TRỌNG: làm số cân */
+    text-align: center;
+}
+
+.invite-card .date .dot {
+    min-width: auto;
+}
+
+
+.invite-card .lunar {
+    font-size: 14px;
+    opacity: 0.8;
+    margin-bottom: 15px;
+}
+
+.invite-card .place-title {
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.invite-card .address {
+    font-size: 15px;
+    opacity: 0.95;
+    margin-bottom: 20px;
+}
+
+.map-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #fff;
+    color: #7c0a0a;
+    font-weight: 600;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: 0.2s;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+}
+
+.map-btn:hover {
+    background: #ffe3e3;
+}
+/* ============================
+   Vu QUY
+============================ */
+/* ===============================
+   CEREMONY CARD (KHỐI CHA)
+================================ */
+.ceremony-card {
+  background: #64595907;
+  text-align: center;
+  position: relative;
+  border-radius: 20px;
+  padding: 25px;
+  color: #fff;
+  box-shadow: 0 5px 12px rgba(0,0,0,0.15);
+  max-width: 700px;   /* chỉnh bề ngang tối đa của hình chữ nhật */
+  width: 90%;         /* tự co khi màn hình nhỏ */
+  margin: 0.5rem auto;
+}
+
+/* ===============================
+   KHỐI LỄ (VU QUY / THÀNH HÔN)
+================================ */
+.ceremony {
+  margin: 3px 0;
+}
+
+.ceremony-title {
+  line-height: 1.6; 
+  border-radius: 6px;
+  color: #ffffff;
+  background: #7c0a0a;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.ceremony-time {
+  color: #300707;
+  font-size: 13px;
+  margin-bottom: 0px;
+}
+
+/* Ngày lớn ở giữa */
+.ceremony-date {
+  color: #300707;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: -5px;
+}
+/* Ngày lớn ở giữa */
+.ceremony-lunar {
+  color: #b93a3a;
+  margin-bottom: 5px;
+}
+.ceremony-place {
+  color: #300707;
+  font-weight: 500;
+}
+
+.ceremony-date strong {
+  font-size: 42px;
+  color: #ce2525;
+}
+
+.ceremony-card {
+  position: relative;
+  display: grid;
+  justify-items: center;
+}
+
+.route-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 460px;
+  grid-row: 2;
+}
+
+.roadhouse {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* HOUSE dùng trong ceremony */
+.ceremony .house {
+  margin-top: 12px;          /* cách dòng "TẠI TƯ GIA..." */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+
+  position: static;          /* ❌ KHÔNG absolute */
+  transform: none;           /* ❌ KHÔNG translate */
+}
+
+/* Text Nhà Gái / Nhà Trai */
+.ceremony .house-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: #7c0a0a;
+}
+
+/* Nút chỉ đường */
+.ceremony .house .map-btn {
+  margin-top: 4px;
+  padding: 6px 14px;
+  font-size: 12px;
+
+  background: #7c0a0a;
+  color: #fff;
+
+  border-radius: 14px;
+  text-decoration: none;
+
+  display: inline-block;
+}
+
+
+/* ================================================================================================================
+   GALLERY SLIDER
+================================================================================================================ */
+#gallery-section h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 32px;
+  font-weight: 500;
+  letter-spacing: 1px;
+
+  margin-top: 40px;
+  margin-bottom: 24px;
+
+  text-align: center;
+  color: #7c0a0a;
+}
+
+/* ===================================================================================================================
+   CALENDAR SECTION
+==================================================================================================================== */
+/* =================================================================
+   CALENDAR SECTION – FIX CỨNG GRID, KHÔNG BAO GIỜ LỆCH
+================================================================= */
+
+.calendar-section {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.calendar-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 1;
+  z-index: 1;
+}
+
+.calendar-overlay {
+  position: absolute;
+  inset: 0;
+  background: transparent;
+  z-index: 2;
+}
+
+.calendar-title {
+  position: relative;
+  z-index: 3;
+  margin-top: 50px;
+  text-align: center;
+  color: #fff;
+  font-size: 22px;
+  letter-spacing: 4px;
+}
+
+/* ===== WRAPPER ===== */
+.calendar-wrapper {
+  position: absolute;
+  top: clamp(80px, 12vh, 140px);
+  right: clamp(16px, 9vw, 40px);
+  z-index: 3;
+
+  /* 🔑 BIẾN KÍCH THƯỚC */
+  --cell: clamp(22px, 7vw, 36px);
+  --gap: clamp(6px, 2.5vw, 14px);
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, var(--cell));
+  gap: var(--gap);
+}
+
+/* ===== DAY (TẤT CẢ GIỐNG NHAU) ===== */
+.day {
+  width: var(--cell);
+  height: var(--cell);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: clamp(11px, 2vw, 14px);
+  line-height: 1;
+
+  color: #fff;
+  opacity: 0.;
+}
+
+
+/* header & empty KHÔNG PHÁ GRID */
+.day.header {
+  opacity: .75;
+}
+
+.day.empty {
+  pointer-events: none;
+}
+
+/* ===== ICON OVERLAY – ĐỘC LẬP ===== */
+/* icon */
+.calendar-icon {
+  position: absolute;
+  width: 34px;
+  height: 34px;
+  pointer-events: none;
+  z-index: 5;
+  transform: translate(-2px, -2px); /* tim ôm số */
+}
+
+.calendar-slogan {
+  position: absolute;
+  bottom: 110px;      /* cách cạnh dưới ảnh 10px */
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  width: 100%;
+  z-index: 5;
+}
+
+.sologan1,
+.sologan2 {
+  margin: 0;
+  color: #fff;       /* nếu nền tối */
+  line-height: 1;
+  letter-spacing: 1px;
+}
+
+.sologan1 {
+  font-family: "Smooch Sans", serif;
+  font-size: 25px;
+  font-weight: 500;
+}
+.sologan2 {
+  font-family: "Corinthia", serif;
+  font-size: 42px;
+  font-weight: 500;
+}
+
+/* ======================================================= confirm section ======================================================= */
+.confirm-section {
+  padding: 30px 10px;
+  display: flex;
+  justify-content: center;
+  background: #fafafa;
+}
+
+.confirm-card {
+  background: #fff;
+  max-width: 420px;
+  width: 100%;
+  padding: 28px 24px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+.confirm-card h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.confirm-desc {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 24px;
+}
+
+.form-group {
+  text-align: left;
+  margin-bottom: 18px;
+}
+
+.form-group select {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  background: #fff;
+}
+
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.form-group input[type="text"] {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+
+.radio-group label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.radio-group input {
+  margin-right: 8px;
+}
+
+.btn-confirm {
+  width: 100%;
+  padding: 12px;
+  background: #7b2d2d;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.btn-confirm:hover {
+  background: #5e2121;
+}
+
+.confirm-message {
+  margin-top: 12px;
+  font-size: 14px;
+  min-height: 20px;
+}
+
+.confirm-message.error {
+  color: #c0392b;
+}
+
+.confirm-message.success {
+  color: #2c7a4b;
+}
+
+.confirm-message.sad {
+  color: #7a4b4b;
+}
+
+.btn-confirm.loading {
+  pointer-events: none;
+  opacity: 0.7;
+}
+#amountGroup {
+  display: block;
+}
+
+
+/* ===== GALLERY SLIDER ===== */
+#gallery-section h2 {
+  margin-top: -20px;
+  margin-bottom: 20px;
+  font-family: serif;
+  color: #000000;
+  font-weight: 300;
+}
+
+.gallery-slider {
+  max-width: 900px;
+  margin: auto;
+}
+
+/* ẢNH LỚN */
+.gallery-main {
+  width: 100%;
+  height: 420px;
+  border-radius: 18px;
+  overflow: hidden;
+  cursor: zoom-in;
+}
+
+.gallery-main img {
+  width: 100%;
+  height: 100%;
+  transition: transform .3s ease;
+}
+
+/* THUMBNAILS */
+.gallery-thumbs-wrapper {
+  position: relative;
+  margin-top: 15px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.gallery-thumbs {
+  display: flex;
+  gap: 10px;
+  padding: 5px 15px;
+}
+
+.gallery-thumbs img {
+  width: 80px;
+  height: 55px;
+  object-fit: cover;
+  flex-shrink: 0;
+  opacity: 0.5;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: opacity .2s, transform .2s;
+}
+
+.gallery-thumbs img.active {
+  opacity: 1;
+  outline: 2px solid #7c0a0a;
+}
+
+.gallery-thumbs img:hover {
+  transform: scale(1.05);
+}
+
+/* FADE 2 BÊN → báo hiệu còn ảnh */
+.fade-edge::before,
+.fade-edge::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 40px;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.fade-edge::before {
+  left: 0;
+  background: linear-gradient(to right, #fff, transparent);
+}
+
+.fade-edge::after {
+  right: 0;
+  background: linear-gradient(to left, #fff, transparent);
+}
+
+/* ===== CINEMATIC ALBUM FIX ===== */
+
+.gallery-main.cinematic {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #000;
+}
+
+/* nền mờ hai bên */
+.cinematic-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  filter: blur(30px);
+  transform: scale(1.2);
+  opacity: 0.6;
+}
+
+/* ảnh chính – KHÔNG BAO GIỜ BỊ CẮT */
+.cinematic-img {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;   /* ⭐ CHÌA KHÓA */
+}
+
+/* mobile */
+@media (max-width: 600px) {
+  .gallery-main.cinematic {
+    height: 260px;
+  }
+}
+
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .gallery-main {
+    height: 260px;
+  }
+
+  .gallery-thumbs img {
+    width: 65px;
+    height: 48px;
+  }
+}
+
+/* lightbox */
+/* ===== LIGHTBOX ===== */
+#lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+#lightbox img {
+  max-width: 95vw;
+  max-height: 90vh;
+  object-fit: contain;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 36px;
+  color: #fff;
+  cursor: pointer;
+  z-index: 10000;
+}
+
+/* mobile */
+@media (max-width: 600px) {
+  .lightbox-close {
+    font-size: 42px;
+  }
+}
+
+/* ============================
+   WISH SECTION
+============================ */
+
+
+/* ===== WISH SECTION ===== */
+#wish-section h2 {
+  margin-top: -30px;
+  margin-bottom: 20px;
+}
+
+.wish-box {
+  max-width: 420px;
+  margin: auto;
+  background: #fff;
+  padding: 25px;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.wish-box input,
+.wish-box textarea {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 15px;
+  outline: none;
+}
+
+.wish-box textarea {
+  resize: none;
+}
+
+.wish-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.btn-send.loading {
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.btn-send.loading::after {
+  content: "Đang gửi...";
+}
+
+.wish-alert.error {
+  color: #c0392b;
+}
+
+.wish-alert.success {
+  color: #2c7a4b;
+}
+
+
+.btn-send {
+  background: #d34d55;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.btn-qr {
+  background: #fff;
+  border: 2px solid #d34d55;
+  color: #d34d55;
+  padding: 10px 18px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+.btn-qr .btn-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+.btn-qr {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.btn-qr span {
+  line-height: 1;
+}
+
+.wish-alert {
+  min-height: 20px;
+  margin-top: 12px;
+  font-size: 14px;
+}
+
+/* ===== QR POPUP ===== */
+.qr-popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  padding: 20px;
+}
+
+.qr-wrapper {
+  background: #fff;
+  border-radius: 22px;
+  padding: 25px 20px;
+  max-width: 700px;
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;     /* LUÔN ngang */
+  flex-wrap: nowrap;       /* KHÔNG cho xuống dòng */
+  gap: 16px;
+
+  overflow-x: auto;        /* VUỐT NGANG */
+  -webkit-overflow-scrolling: touch;
+
+  position: relative;
+}
+
+
+.qr-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.qr-content {
+  flex: 1;
+  background: #fafafa;
+  padding: 20px;
+  border-radius: 18px;
+  text-align: center;
+}
+
+.qr-content img {
+  width: 180px;
+  margin: 12px auto;
+}
+
+.btn-bank {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 18px;
+  background: #d34d55;
+  color: #fff;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+
+
+/* ============================
+   CONTENT SECTIONS
+============================ */
+.section { padding: 2.25rem 1rem; max-width: 1100px; margin: 0 auto; }
+.center { text-align: center; }
+
+/* GALLERY */
+.gallery-grid {
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
+  gap:8px;
+}
+.gallery-grid img {
+  width:100%; height:150px;
+  object-fit:cover;
+  border-radius:6px;
+}
+
+/* FOOTER */
+.footer { 
+  text-align:center; 
+  padding:1rem 0; 
+  opacity:.8; 
+
+  font-family: "Corinthia", serif;
+  font-size: 42px;
+  font-weight: 500;
+}
+
+/* ============================
+   RESPONSIVE (MOBILE)
+============================ */
+@media (min-width: 721px) {
+
+  /* WE GET MARRIED */
+  .we-get-married {
+    font-size: 58px;                       /* 🔒 khóa cứng */
+    transform: translate(210px, -250px) rotate(-10deg);
+  }
+
+  /* COUPLE NAMES */
+  .hero .couple-names {
+    font-size: 36px;                       /* 🔒 khóa */
+    --spread: 10px;                       /* 🔒 khóa */
+  }
+
+  /* SAVE THE DATE */
+  .save-the-date .line {
+    font-size: 72px;                       /* 🔒 thay 10vw */
+  }
+
+}
+
+
+@media (max-width: 721px) {
+
+  .hero {
+    height: 85vh;                    /* phù hợp mobile */
+    min-height: 520px;
+  }
+
+  .music-btn {
+    right: 16px;
+  }
+  
+  .we-get-married {
+    transform: translate(23vw, -25vh) rotate(-10deg);
+    font-size: 47px;
+  }
+
+  .hero-content {
+    top: 58%;                        /* cân chỉnh đẹp hơn */
+  }
+
+  .names {
+    font-size: 34px;
+    margin-bottom: 18px;
+  }
+
+  .subtitle { font-size: 18px; }
+
+  .save-the-date-box { margin-bottom: 30px; }
+
+  .btn { padding: 0.5rem 0.9rem; }
+
+  .wave { height: 70px; }
+
+  .hero .couple-names {
+    --spread: clamp(20px, 6vw, 120px);
+  }
+
+}
+
+/* SMALL MOBILE */
+@media (max-width: 480px) {
+
+  .we-get-married {
+    transform: translate(17vw, -25vh) rotate(-10deg);
+    font-size: 50px;
+  }
+
+  .hero {
+    height: 90vh;
+    min-height: 520px;
+  }
+
+  .hero-content { top: 60%; }
+
+  .names { font-size: 30px; }
+  .subtitle { font-size: 16px; }
+
+  .timer { gap:0.5rem; }
+  .timer span { font-size:1.1rem; }
+
+  .hero .couple-names {
+    line-height: 1.3;
+  }
+  
+}
+
+@media (max-width: 430px) {
+
+  .we-get-married {
+    left: 0;
+    top: -40px;
+    transform: rotate(-8deg);
+    font-size: 42px;
+  }
+  .we-get-married {
+    transform: translate(11vw, -15vh) rotate(-10deg);
+    font-size: 47px;
+  }
+
+  .hero .couple-names {
+    --spread: clamp(0px, 2vw, 10px);
+  }
+
+  .wedding-style {
+    top: 58%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media (max-width: 400px) {
+  .we-get-married {
+    transform: translate(11vw, -15vh) rotate(-10deg);
+    font-size: 47px;
+  }
+  
+
+  .hero .couple-names {
+    --spread: clamp(0px, 1vw, 0px);
+  }
+}
+
+/* =====================================================
+   DESKTOP / LAPTOP
+   Giảm độ dịch để tránh che lấn bố cục
+===================================================== */
+
+.invite-card,
+.ceremony-card {
+  overflow: hidden; /* chặn tràn */
+}
+
+.invite-card *,
+.ceremony-card * {
+  white-space: normal !important;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  text-align: center;
+}
