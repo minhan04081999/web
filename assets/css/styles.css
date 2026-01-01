@@ -1096,6 +1096,7 @@ header {
 
 /* ======================================================= confirm section ======================================================= */
 .confirm-section {
+  font-family: "Quicksand", serif;
   padding: 30px 10px;
   display: flex;
   justify-content: center;
@@ -1208,10 +1209,11 @@ header {
 
 /* ===== GALLERY SLIDER ===== */
 #gallery-section h2 {
+  font-family: "Corinthia", serif;
+  font-size: 40px;
   margin-top: -20px;
   margin-bottom: 20px;
-  font-family: serif;
-  color: #000000;
+  color: #6F2E2E;
   font-weight: 300;
 }
 
@@ -1380,7 +1382,9 @@ header {
 /* ============================
    WISH SECTION
 ============================ */
-
+#wish-section h2 {
+  font-family: "Quicksand", serif;
+}
 
 /* ===== WISH SECTION ===== */
 #wish-section h2 {
@@ -1489,6 +1493,7 @@ header {
 
 .qr-wrapper {
   background: #fff;
+  font-family: "Quicksand", serif;
   border-radius: 22px;
   padding: 25px 20px;
   max-width: 700px;
