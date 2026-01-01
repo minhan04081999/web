@@ -153,6 +153,17 @@ const thumbsContainer = document.getElementById('thumbs');
 const bg = document.querySelector('.cinematic-bg');
 
 let currentIndex = 0;
+// ⭐ KHỞI TẠO BLUR BACKGROUND NGAY KHI LOAD
+window.addEventListener('load', () => {
+  if (!thumbs.length) return;
+
+  thumbs[0].classList.add('active');
+  mainImage.src = thumbs[0].src;
+
+  if (bg) {
+    bg.style.backgroundImage = `url(${thumbs[0].src})`;
+  }
+});
 
 /* CLICK THUMB */
 thumbs.forEach((img, index) => {
