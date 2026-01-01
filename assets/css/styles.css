@@ -8,7 +8,7 @@ body {
 
 .page-wrapper {
   width: 100%;
-  max-width: 720px;     /* 🔒 FIX SIZE TỐI ĐA */
+  max-width: 470px;     /* 🔒 FIX SIZE TỐI ĐA */
   min-height: 100vh;
   background: #fff;
   box-shadow: 0 0 40px rgba(0,0,0,0.06);
@@ -1011,7 +1011,7 @@ header {
 
   /* 🔑 BIẾN KÍCH THƯỚC */
   --cell: clamp(22px, 7vw, 36px);
-  --gap: clamp(6px, 2.5vw, 14px);
+  --gap: clamp(6px, 14px);
 }
 
 .calendar-grid {
@@ -1030,10 +1030,11 @@ header {
   justify-content: center;
 
   font-size: clamp(11px, 2vw, 14px);
+  font-weight: 600;
   line-height: 1;
 
   color: #fff;
-  opacity: 0.;
+  opacity: 1;
 }
 
 
@@ -1564,92 +1565,42 @@ header {
 /* ============================
    RESPONSIVE (MOBILE)
 ============================ */
-@media (min-width: 721px) {
-
+/* SMALL MOBILE */
+@media (max-width: 470px) {
   /* WE GET MARRIED */
   .we-get-married {
-    font-size: 58px;                       /* 🔒 khóa cứng */
-    transform: translate(210px, -250px) rotate(-10deg);
+    font-size: 50px;                       /* 🔒 khóa cứng */
+    transform: translate(90px, -220px) rotate(-10deg);
   }
 
   /* COUPLE NAMES */
   .hero .couple-names {
-    font-size: 36px;                       /* 🔒 khóa */
+    font-size: 30px;                       /* 🔒 khóa */
     --spread: 10px;                       /* 🔒 khóa */
   }
 
   /* SAVE THE DATE */
   .save-the-date .line {
-    font-size: 72px;                       /* 🔒 thay 10vw */
+    font-size: 45px;                       /* 🔒 thay 10vw */
   }
-
 }
-
-
-@media (max-width: 721px) {
-
-  .hero {
-    height: 85vh;                    /* phù hợp mobile */
-    min-height: 520px;
-  }
-
-  .music-btn {
-    right: 16px;
-  }
-  
+@media (min-width: 470px) {
+  /* WE GET MARRIED */
   .we-get-married {
-    transform: translate(23vw, -25vh) rotate(-10deg);
-    font-size: 47px;
+    font-size: 50px;                       /* 🔒 khóa cứng */
+    transform: translate(90px, -220px) rotate(-10deg);
   }
 
-  .hero-content {
-    top: 58%;                        /* cân chỉnh đẹp hơn */
-  }
-
-  .names {
-    font-size: 34px;
-    margin-bottom: 18px;
-  }
-
-  .subtitle { font-size: 18px; }
-
-  .save-the-date-box { margin-bottom: 30px; }
-
-  .btn { padding: 0.5rem 0.9rem; }
-
-  .wave { height: 70px; }
-
+  /* COUPLE NAMES */
   .hero .couple-names {
-    --spread: clamp(20px, 6vw, 120px);
+    font-size: 30px;                       /* 🔒 khóa */
+    --spread: 10px;                       /* 🔒 khóa */
   }
 
-}
-
-/* SMALL MOBILE */
-@media (max-width: 480px) {
-
-  .we-get-married {
-    transform: translate(17vw, -25vh) rotate(-10deg);
-    font-size: 50px;
+  /* SAVE THE DATE */
+  .save-the-date .line {
+    font-size: 45px;                       /* 🔒 thay 10vw */
   }
-
-  .hero {
-    height: 90vh;
-    min-height: 520px;
-  }
-
-  .hero-content { top: 60%; }
-
-  .names { font-size: 30px; }
-  .subtitle { font-size: 16px; }
-
-  .timer { gap:0.5rem; }
-  .timer span { font-size:1.1rem; }
-
-  .hero .couple-names {
-    line-height: 1.3;
-  }
-  
 }
 
 @media (max-width: 430px) {
