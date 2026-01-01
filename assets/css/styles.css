@@ -685,6 +685,7 @@ header {
   justify-content: flex-start;
   margin-left: 50px;   /* ✅ KHÔNG gây overflow */
   transform: none;
+  margin-bottom: 10px;
 }
 
 /* Khoảng cách ảnh – tên cô dâu */
@@ -971,7 +972,8 @@ header {
 
 .calendar-section {
   position: relative;
-  height: 100vh;
+  /* ⬇️ GIẢM CHIỀU CAO Ở ĐÂY */
+  height: min(90vh, 600px);
   overflow: hidden;
 }
 
@@ -1009,9 +1011,8 @@ header {
   right: clamp(16px, 9vw, 40px);
   z-index: 3;
 
-  /* 🔑 BIẾN KÍCH THƯỚC */
-  --cell: clamp(22px, 7vw, 36px);
-  --gap: clamp(6px, 14px);
+  --cell: 20px;   /* ⬅️ kích thước ô cố định */
+  --gap: 13px;    /* ⬅️ khoảng cách cố định */
 }
 
 .calendar-grid {
@@ -1051,16 +1052,16 @@ header {
 /* icon */
 .calendar-icon {
   position: absolute;
-  width: 34px;
-  height: 34px;
+  width: 35px;
+  height: 35px;
   pointer-events: none;
   z-index: 5;
-  transform: translate(1px, 0px); /* tim ôm số */
+  transform: translate(-7px, -6px); /* tim ôm số */
 }
 
 .calendar-slogan {
   position: absolute;
-  bottom: 210px;      /* cách cạnh dưới ảnh 10px */
+  bottom: 100px;      /* cách cạnh dưới ảnh 10px */
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
