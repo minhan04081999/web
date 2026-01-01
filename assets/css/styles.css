@@ -275,7 +275,7 @@ header {
   justify-content: center;
   gap: clamp(10px, 2vw, 20px);
 
-  font-family: 'Playfair', serif;
+  font-family: 'Playfair';
   font-size: clamp(26px, 5vw, 56px);
   line-height: 1.15;
   white-space: nowrap;
