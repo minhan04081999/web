@@ -266,7 +266,7 @@ header {
   transform: translate(10vw, -12vh) rotate(-12deg);
 
   /* --- Spacing --- */
-  margin-bottom: 6px;                        /* khoảng cách với tên */
+  margin-bottom: 60px;                        /* khoảng cách với tên */
 
   /* --- Text behavior --- */
   white-space: nowrap;                       /* không cho xuống dòng */
