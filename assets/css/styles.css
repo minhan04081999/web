@@ -1599,13 +1599,13 @@ header {
 @media (min-width: 570px) {
   /* WE GET MARRIED */
   .we-get-married {
-    font-size: 59px;                       /* 🔒 khóa cứng */
-    transform: translate(90px, -220px) rotate(-10deg);
+    font-size: 65px;                       /* 🔒 khóa cứng */
+    transform: translate(110px, -220px) rotate(-10deg);
   }
 
   /* COUPLE NAMES */
   .hero .couple-names {
-    font-size: 32px;                       /* 🔒 khóa */
+    font-size: 35px;                       /* 🔒 khóa */
     --spread: 10px;                       /* 🔒 khóa */
   }
 
