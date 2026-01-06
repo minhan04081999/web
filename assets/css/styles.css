@@ -1581,13 +1581,13 @@ header {
 @media (max-width: 470px) {
   /* WE GET MARRIED */
   .we-get-married {
-    font-size: 50px;                       /* 🔒 khóa cứng */
-    transform: translate(90px, -220px) rotate(-10deg);
+    font-size: 58px;                       /* 🔒 khóa cứng */
+    transform: translate(80px, -230px) rotate(-10deg);
   }
 
   /* COUPLE NAMES */
   .hero .couple-names {
-    font-size: 30px;                       /* 🔒 khóa */
+    font-size: 40px;                       /* 🔒 khóa */
     --spread: 10px;                       /* 🔒 khóa */
   }
 
@@ -1599,7 +1599,7 @@ header {
 @media (min-width: 470px) {
   /* WE GET MARRIED */
   .we-get-married {
-    font-size: 50px;                       /* 🔒 khóa cứng */
+    font-size: 59px;                       /* 🔒 khóa cứng */
     transform: translate(90px, -220px) rotate(-10deg);
   }
 
@@ -1624,8 +1624,8 @@ header {
     font-size: 42px;
   }
   .we-get-married {
-    transform: translate(11vw, -15vh) rotate(-10deg);
-    font-size: 47px;
+    transform: translate(12vw, -20vh) rotate(-10deg);
+    font-size: 57px;
   }
 
   .hero .couple-names {
@@ -1640,8 +1640,8 @@ header {
 
 @media (max-width: 400px) {
   .we-get-married {
-    transform: translate(11vw, -15vh) rotate(-10deg);
-    font-size: 47px;
+    transform: translate(11vw, -20vh) rotate(-10deg);
+    font-size: 57px;
   }
   
 
