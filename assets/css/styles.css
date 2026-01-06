@@ -1587,7 +1587,7 @@ header {
 
   /* COUPLE NAMES */
   .hero .couple-names {
-    font-size: 40px;                       /* 🔒 khóa */
+    font-size: 34px;                       /* 🔒 khóa */
     --spread: 10px;                       /* 🔒 khóa */
   }
 
@@ -1605,7 +1605,7 @@ header {
 
   /* COUPLE NAMES */
   .hero .couple-names {
-    font-size: 30px;                       /* 🔒 khóa */
+    font-size: 32px;                       /* 🔒 khóa */
     --spread: 10px;                       /* 🔒 khóa */
   }
 
@@ -1628,8 +1628,10 @@ header {
     font-size: 57px;
   }
 
+  /* COUPLE NAMES */
   .hero .couple-names {
-    --spread: clamp(0px, 2vw, 10px);
+    font-size: 33px;                       /* 🔒 khóa */
+    --spread: 10px;                       /* 🔒 khóa */
   }
 
   .wedding-style {
