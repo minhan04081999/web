@@ -1578,7 +1578,7 @@ header {
    RESPONSIVE (MOBILE)
 ============================ */
 /* SMALL MOBILE */
-@media (max-width: 470px) {
+@media (max-width: 570px) {
   /* WE GET MARRIED */
   .we-get-married {
     font-size: 58px;                       /* 🔒 khóa cứng */
@@ -1596,7 +1596,7 @@ header {
     font-size: 45px;                       /* 🔒 thay 10vw */
   }
 }
-@media (min-width: 470px) {
+@media (min-width: 570px) {
   /* WE GET MARRIED */
   .we-get-married {
     font-size: 59px;                       /* 🔒 khóa cứng */
