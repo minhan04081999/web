@@ -1641,6 +1641,18 @@ header {
   .save-the-date .line {
     font-size: 45px;                       /* 🔒 thay 10vw */
   }
+  .day {
+    font-size: clamp(11px, 9vw, 14px);
+  }
+  .calendar-wrapper {
+    --cell: 34px;   /* ⬅️ kích thước ô cố định */
+    --gap: 27px;    /* ⬅️ khoảng cách cố định */
+  }
+  .calendar-icon {
+    width: 49px;
+    height: 49px;
+    transform: translate(-7px, -6px); /* tim ôm số */
+  }
 }
 
 /* SMALL MOBILE */
@@ -1666,6 +1678,18 @@ header {
   .save-the-date .line {
     font-size: 45px;                       /* 🔒 thay 10vw */
   }
+  .day {
+    font-size: clamp(11px, 8vw, 14px);
+  }
+  .calendar-wrapper {
+    --cell: 32px;   /* ⬅️ kích thước ô cố định */
+    --gap: 25px;    /* ⬅️ khoảng cách cố định */
+  }
+  .calendar-icon {
+    width: 47px;
+    height: 47px;
+    transform: translate(-7px, -6px); /* tim ôm số */
+  }
 }
 
 @media (max-width: 550px) {
@@ -1684,6 +1708,18 @@ header {
   }
   .info-sentences {
     font-size: 40px; 
+  }
+  .day {
+    font-size: clamp(11px, 7vw, 14px);
+  }
+  .calendar-wrapper {
+    --cell: 30px;   /* ⬅️ kích thước ô cố định */
+    --gap: 23px;    /* ⬅️ khoảng cách cố định */
+  }
+  .calendar-icon {
+    width: 45px;
+    height: 45px;
+    transform: translate(-7px, -6px); /* tim ôm số */
   }
 }
 
@@ -1704,6 +1740,18 @@ header {
   .info-sentences {
     font-size: 39px; 
   }
+  .day {
+    font-size: clamp(11px, 6vw, 14px);
+  }
+  .calendar-wrapper {
+    --cell: 28px;   /* ⬅️ kích thước ô cố định */
+    --gap: 21px;    /* ⬅️ khoảng cách cố định */
+  }
+  .calendar-icon {
+    width: 43px;
+    height: 43px;
+    transform: translate(-7px, -6px); /* tim ôm số */
+  }
 }
 
 @media (max-width: 490px) {
@@ -1722,6 +1770,18 @@ header {
   }
   .info-sentences {
     font-size: 38px; 
+  }
+  .day {
+    font-size: clamp(11px, 5vw, 14px);
+  }
+  .calendar-wrapper {
+    --cell: 26px;   /* ⬅️ kích thước ô cố định */
+    --gap: 19px;    /* ⬅️ khoảng cách cố định */
+  }
+  .calendar-icon {
+    width: 41px;
+    height: 41px;
+    transform: translate(-7px, -6px); /* tim ôm số */
   }
 }
 
@@ -1742,6 +1802,18 @@ header {
   .info-sentences {
     font-size: 37px; 
   }
+  .day {
+    font-size: clamp(11px, 4vw, 14px);
+  }
+  .calendar-wrapper {
+    --cell: 24px;   /* ⬅️ kích thước ô cố định */
+    --gap: 17px;    /* ⬅️ khoảng cách cố định */
+  }
+  .calendar-icon {
+    width: 39px;
+    height: 39px;
+    transform: translate(-7px, -6px); /* tim ôm số */
+  }
 }
 
 @media (max-width: 430px) {
@@ -1760,6 +1832,18 @@ header {
   }
   .info-sentences {
     font-size: 36px; 
+  }
+  .day {
+    font-size: clamp(11px, 3vw, 14px);
+  }
+  .calendar-wrapper {
+    --cell: 22px;   /* ⬅️ kích thước ô cố định */
+    --gap: 15px;    /* ⬅️ khoảng cách cố định */
+  }
+  .calendar-icon {
+    width: 37px;
+    height: 37px;
+    transform: translate(-7px, -6px); /* tim ôm số */
   }
 }
 
@@ -1780,6 +1864,18 @@ header {
   }
   .info-sentences {
     font-size: 35px; 
+  }
+  .day {
+    font-size: clamp(11px, 2vw, 14px);
+  }
+  .calendar-wrapper {
+    --cell: 20px;   /* ⬅️ kích thước ô cố định */
+    --gap: 13px;    /* ⬅️ khoảng cách cố định */
+  }
+  .calendar-icon {
+    width: 35px;
+    height: 35px;
+    transform: translate(-7px, -6px); /* tim ôm số */
   }
 }
 
