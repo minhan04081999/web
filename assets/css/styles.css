@@ -1521,8 +1521,23 @@ header {
   justify-content: center;
   align-items: center;
   z-index: 9999;
-  padding: 20px;
 }
+
+/* ❌ NÚT ĐÓNG – NAY ĐỨNG YÊN */
+.qr-close {
+  position: absolute;        /* neo theo popup */
+  top: 18px;
+  right: 20px;
+  z-index: 10000;
+
+  font-size: 32px;
+  color: #fff;
+  cursor: pointer;
+  line-height: 1;
+
+  touch-action: manipulation;
+}
+
 
 .qr-wrapper {
   background: #fff;
@@ -1539,17 +1554,6 @@ header {
 
   overflow-x: auto;        /* VUỐT NGANG */
   -webkit-overflow-scrolling: touch;
-
-  position: relative;
-}
-
-
-.qr-close {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 28px;
-  cursor: pointer;
 }
 
 .qr-content {
@@ -1896,4 +1900,8 @@ header {
   word-break: break-word;
   overflow-wrap: break-word;
   text-align: center;
+}
+.section {
+  content-visibility: auto;
+  contain-intrinsic-size: 1000px;
 }

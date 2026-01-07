@@ -408,3 +408,13 @@ function closeQR() {
       e.preventDefault();
     }
   });
+
+function openQR() {
+  document.getElementById('qrPopup').style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+
+function closeQR() {
+  document.getElementById('qrPopup').style.display = 'none';
+  document.body.style.overflow = '';
+}
