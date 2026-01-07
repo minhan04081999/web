@@ -1610,65 +1610,8 @@ header {
 /* ============================
    RESPONSIVE (MOBILE)
 ============================ */
-/* pixel 4A */
-@media (max-width: 400px) {
-  .we-get-married {
-    transform: translate(11vw, -22vh) rotate(-10deg);
-    font-size: 57px;
-  }
-  
-  /* COUPLE NAMES */
-  .hero .couple-names {
-    font-size: 32px;                       /* 🔒 khóa */
-    --spread: 10px;                       /* 🔒 khóa */
-  }
-  .hero .wedding-date {
-    font-size: 21px;                       /* 🔒 khóa */
-  }
-  .info-sentences {
-    font-size: 35px; 
-  }
-}
 
-@media (max-width: 430px) {
 
-  .we-get-married {
-    transform: translate(12vw, -23vh) rotate(-10deg);
-    font-size: 58px;
-  }
-  
-  /* COUPLE NAMES */
-  .hero .couple-names {
-    font-size: 33px;                       /* 🔒 khóa */
-    --spread: 10px;                       /* 🔒 khóa */
-  }
-  .hero .wedding-date {
-    font-size: 21px;                       /* 🔒 khóa */
-  }
-  .info-sentences {
-    font-size: 31px; 
-  }
-
-}
-/* SMALL MOBILE */
-@media (max-width: 570px) {
-  /* WE GET MARRIED */
-  .we-get-married {
-    font-size: 58px;                       /* 🔒 khóa cứng */
-    transform: translate(80px, -230px) rotate(-10deg);
-  }
-
-  /* COUPLE NAMES */
-  .hero .couple-names {
-    font-size: 34px;                       /* 🔒 khóa */
-    --spread: 10px;                       /* 🔒 khóa */
-  }
-
-  /* SAVE THE DATE */
-  .save-the-date .line {
-    font-size: 45px;                       /* 🔒 thay 10vw */
-  }
-}
 @media (min-width: 571px) {
   /* WE GET MARRIED */
   .we-get-married {
@@ -1688,6 +1631,145 @@ header {
   }
 }
 
+/* SMALL MOBILE */
+@media (max-width: 570px) {
+  .we-get-married {
+    transform: translate(15vw, -28vh) rotate(-10deg);
+    font-size: 62px;
+  }
+  
+  /* COUPLE NAMES */
+  .hero .couple-names {
+    font-size: 38px;                       /* 🔒 khóa */
+    --spread: 10px;                       /* 🔒 khóa */
+  }
+  .hero .wedding-date {
+    font-size: 27px;                       /* 🔒 khóa */
+  }
+  .info-sentences {
+    font-size: 41px; 
+  }
+
+  /* SAVE THE DATE */
+  .save-the-date .line {
+    font-size: 45px;                       /* 🔒 thay 10vw */
+  }
+}
+
+@media (max-width: 550px) {
+  .we-get-married {
+    transform: translate(14vw, -27vh) rotate(-10deg);
+    font-size: 61px;
+  }
+  
+  /* COUPLE NAMES */
+  .hero .couple-names {
+    font-size: 37px;                       /* 🔒 khóa */
+    --spread: 10px;                       /* 🔒 khóa */
+  }
+  .hero .wedding-date {
+    font-size: 26px;                       /* 🔒 khóa */
+  }
+  .info-sentences {
+    font-size: 40px; 
+  }
+}
+
+@media (max-width: 520px) {
+  .we-get-married {
+    transform: translate(13vw, -26vh) rotate(-10deg);
+    font-size: 60px;
+  }
+  
+  /* COUPLE NAMES */
+  .hero .couple-names {
+    font-size: 36px;                       /* 🔒 khóa */
+    --spread: 10px;                       /* 🔒 khóa */
+  }
+  .hero .wedding-date {
+    font-size: 25px;                       /* 🔒 khóa */
+  }
+  .info-sentences {
+    font-size: 39px; 
+  }
+}
+
+@media (max-width: 490px) {
+  .we-get-married {
+    transform: translate(12vw, -25vh) rotate(-10deg);
+    font-size: 59px;
+  }
+  
+  /* COUPLE NAMES */
+  .hero .couple-names {
+    font-size: 35px;                       /* 🔒 khóa */
+    --spread: 10px;                       /* 🔒 khóa */
+  }
+  .hero .wedding-date {
+    font-size: 24px;                       /* 🔒 khóa */
+  }
+  .info-sentences {
+    font-size: 38px; 
+  }
+}
+
+@media (max-width: 460px) {
+  .we-get-married {
+    transform: translate(12vw, -24vh) rotate(-10deg);
+    font-size: 58px;
+  }
+  
+  /* COUPLE NAMES */
+  .hero .couple-names {
+    font-size: 34px;                       /* 🔒 khóa */
+    --spread: 10px;                       /* 🔒 khóa */
+  }
+  .hero .wedding-date {
+    font-size: 23px;                       /* 🔒 khóa */
+  }
+  .info-sentences {
+    font-size: 37px; 
+  }
+}
+
+@media (max-width: 430px) {
+  .we-get-married {
+    transform: translate(12vw, -23vh) rotate(-10deg);
+    font-size: 57px;
+  }
+  
+  /* COUPLE NAMES */
+  .hero .couple-names {
+    font-size: 33px;                       /* 🔒 khóa */
+    --spread: 10px;                       /* 🔒 khóa */
+  }
+  .hero .wedding-date {
+    font-size: 22px;                       /* 🔒 khóa */
+  }
+  .info-sentences {
+    font-size: 36px; 
+  }
+}
+
+/* pixel 4A */
+@media (max-width: 400px) {
+  .we-get-married {
+    transform: translate(11vw, -22vh) rotate(-10deg);
+    font-size: 56px;
+  }
+  
+  /* COUPLE NAMES */
+  .hero .couple-names {
+    font-size: 32px;                       /* 🔒 khóa */
+    --spread: 10px;                       /* 🔒 khóa */
+  }
+  .hero .wedding-date {
+    font-size: 21px;                       /* 🔒 khóa */
+  }
+  .info-sentences {
+    font-size: 35px; 
+  }
+}
 
 @media (max-width: 570px) {
   .music-btn {
