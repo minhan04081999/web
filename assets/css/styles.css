@@ -1713,13 +1713,12 @@ header {
     font-size: clamp(11px, 7vw, 14px);
   }
   .calendar-wrapper {
-    --cell: 30px;   /* ⬅️ kích thước ô cố định */
-    --gap: 23px;    /* ⬅️ khoảng cách cố định */
+    --cell: 25px;   /* ⬅️ kích thước ô cố định */
+    --gap: 18px;    /* ⬅️ khoảng cách cố định */
   }
   .calendar-icon {
     width: 45px;
     height: 45px;
-    transform: translate(-7px, -6px); /* tim ôm số */
   }
 }
 
@@ -1744,13 +1743,12 @@ header {
     font-size: clamp(11px, 6vw, 14px);
   }
   .calendar-wrapper {
-    --cell: 28px;   /* ⬅️ kích thước ô cố định */
-    --gap: 21px;    /* ⬅️ khoảng cách cố định */
+    --cell: 24px;   /* ⬅️ kích thước ô cố định */
+    --gap: 17px;    /* ⬅️ khoảng cách cố định */
   }
   .calendar-icon {
     width: 43px;
     height: 43px;
-    transform: translate(-7px, -6px); /* tim ôm số */
   }
 }
 
@@ -1775,13 +1773,12 @@ header {
     font-size: clamp(11px, 5vw, 14px);
   }
   .calendar-wrapper {
-    --cell: 26px;   /* ⬅️ kích thước ô cố định */
-    --gap: 19px;    /* ⬅️ khoảng cách cố định */
+    --cell: 23px;   /* ⬅️ kích thước ô cố định */
+    --gap: 16px;    /* ⬅️ khoảng cách cố định */
   }
   .calendar-icon {
     width: 41px;
     height: 41px;
-    transform: translate(-7px, -6px); /* tim ôm số */
   }
 }
 
@@ -1806,13 +1803,12 @@ header {
     font-size: clamp(11px, 4vw, 14px);
   }
   .calendar-wrapper {
-    --cell: 24px;   /* ⬅️ kích thước ô cố định */
-    --gap: 17px;    /* ⬅️ khoảng cách cố định */
+    --cell: 22px;   /* ⬅️ kích thước ô cố định */
+    --gap: 15px;    /* ⬅️ khoảng cách cố định */
   }
   .calendar-icon {
     width: 39px;
     height: 39px;
-    transform: translate(-7px, -6px); /* tim ôm số */
   }
 }
 
@@ -1837,13 +1833,12 @@ header {
     font-size: clamp(11px, 3vw, 14px);
   }
   .calendar-wrapper {
-    --cell: 22px;   /* ⬅️ kích thước ô cố định */
-    --gap: 15px;    /* ⬅️ khoảng cách cố định */
+    --cell: 21px;   /* ⬅️ kích thước ô cố định */
+    --gap: 14px;    /* ⬅️ khoảng cách cố định */
   }
   .calendar-icon {
     width: 37px;
     height: 37px;
-    transform: translate(-7px, -6px); /* tim ôm số */
   }
 }
 
@@ -1875,7 +1870,6 @@ header {
   .calendar-icon {
     width: 35px;
     height: 35px;
-    transform: translate(-7px, -6px); /* tim ôm số */
   }
 }
 
