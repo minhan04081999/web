@@ -1615,9 +1615,13 @@ header {
 @media (min-width: 571px) {
   /* WE GET MARRIED */
   .we-get-married {
-    transform: translate(18vw, -35vh) rotate(-10deg);
+    transform: translate(100px, -290px) rotate(-10deg);
     font-size: 62px;
   }
+  .hero {
+  overflow: visible;
+}
+
 
   /* COUPLE NAMES */
   .hero .couple-names {
