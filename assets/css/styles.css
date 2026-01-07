@@ -1616,7 +1616,7 @@ header {
   /* WE GET MARRIED */
   .we-get-married {
     transform: translate(100px, -290px) rotate(-10deg);
-    font-size: 62px;
+    font-size: 70px;
   }
   .hero {
   overflow: visible;
@@ -1659,7 +1659,7 @@ header {
 @media (max-width: 570px) {
   .we-get-married {
     transform: translate(17vw, -34vh) rotate(-10deg);
-    font-size: 62px;
+    font-size: 68px;
   }
   
   /* COUPLE NAMES */
@@ -1695,7 +1695,7 @@ header {
 @media (max-width: 550px) {
   .we-get-married {
     transform: translate(16vw, -33vh) rotate(-10deg);
-    font-size: 61px;
+    font-size: 66px;
   }
   
   /* COUPLE NAMES */
@@ -1725,7 +1725,7 @@ header {
 @media (max-width: 520px) {
   .we-get-married {
     transform: translate(15vw, -32vh) rotate(-10deg);
-    font-size: 60px;
+    font-size: 64px;
   }
   
   /* COUPLE NAMES */
@@ -1755,7 +1755,7 @@ header {
 @media (max-width: 490px) {
   .we-get-married {
     transform: translate(14vw, -31vh) rotate(-10deg);
-    font-size: 59px;
+    font-size: 62px;
   }
   
   /* COUPLE NAMES */
@@ -1785,7 +1785,7 @@ header {
 @media (max-width: 460px) {
   .we-get-married {
     transform: translate(13vw, -30vh) rotate(-10deg);
-    font-size: 58px;
+    font-size: 60px;
   }
   
   /* COUPLE NAMES */
@@ -1815,7 +1815,7 @@ header {
 @media (max-width: 430px) {
   .we-get-married {
     transform: translate(12vw, -29vh) rotate(-10deg);
-    font-size: 57px;
+    font-size: 58px;
   }
   
   /* COUPLE NAMES */
