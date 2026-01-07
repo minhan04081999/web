@@ -1610,41 +1610,23 @@ header {
 /* ============================
    RESPONSIVE (MOBILE)
 ============================ */
-/* SMALL MOBILE */
-@media (max-width: 570px) {
-  /* WE GET MARRIED */
+/* pixel 4A */
+@media (max-width: 400px) {
   .we-get-married {
-    font-size: 58px;                       /* 🔒 khóa cứng */
-    transform: translate(80px, -230px) rotate(-10deg);
+    transform: translate(11vw, -22vh) rotate(-10deg);
+    font-size: 57px;
   }
-
+  
   /* COUPLE NAMES */
   .hero .couple-names {
-    font-size: 34px;                       /* 🔒 khóa */
+    font-size: 32px;                       /* 🔒 khóa */
     --spread: 10px;                       /* 🔒 khóa */
   }
-
-  /* SAVE THE DATE */
-  .save-the-date .line {
-    font-size: 45px;                       /* 🔒 thay 10vw */
+  .hero .wedding-date {
+    font-size: 21px;                       /* 🔒 khóa */
   }
-}
-@media (min-width: 570px) {
-  /* WE GET MARRIED */
-  .we-get-married {
-    font-size: 65px;                       /* 🔒 khóa cứng */
-    transform: translate(110px, -220px) rotate(-10deg);
-  }
-
-  /* COUPLE NAMES */
-  .hero .couple-names {
-    font-size: 35px;                       /* 🔒 khóa */
-    --spread: 10px;                       /* 🔒 khóa */
-  }
-
-  /* SAVE THE DATE */
-  .save-the-date .line {
-    font-size: 45px;                       /* 🔒 thay 10vw */
+  .info-sentences {
+    font-size: 35px; 
   }
 }
 
@@ -1668,25 +1650,45 @@ header {
   }
 
 }
-/* pixel 4A */
-@media (max-width: 400px) {
+/* SMALL MOBILE */
+@media (max-width: 570px) {
+  /* WE GET MARRIED */
   .we-get-married {
-    transform: translate(11vw, -22vh) rotate(-10deg);
-    font-size: 57px;
+    font-size: 58px;                       /* 🔒 khóa cứng */
+    transform: translate(80px, -230px) rotate(-10deg);
   }
-  
+
   /* COUPLE NAMES */
   .hero .couple-names {
-    font-size: 32px;                       /* 🔒 khóa */
+    font-size: 34px;                       /* 🔒 khóa */
     --spread: 10px;                       /* 🔒 khóa */
   }
-  .hero .wedding-date {
-    font-size: 21px;                       /* 🔒 khóa */
-  }
-  .info-sentences {
-    font-size: 35px; 
+
+  /* SAVE THE DATE */
+  .save-the-date .line {
+    font-size: 45px;                       /* 🔒 thay 10vw */
   }
 }
+@media (min-width: 571px) {
+  /* WE GET MARRIED */
+  .we-get-married {
+    font-size: 65px;                       /* 🔒 khóa cứng */
+    transform: translate(110px, -220px) rotate(-10deg);
+  }
+
+  /* COUPLE NAMES */
+  .hero .couple-names {
+    font-size: 35px;                       /* 🔒 khóa */
+    --spread: 10px;                       /* 🔒 khóa */
+  }
+
+  /* SAVE THE DATE */
+  .save-the-date .line {
+    font-size: 45px;                       /* 🔒 thay 10vw */
+  }
+}
+
+
 @media (max-width: 570px) {
   .music-btn {
     right: 16px;
