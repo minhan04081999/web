@@ -1615,14 +1615,22 @@ header {
 @media (min-width: 571px) {
   /* WE GET MARRIED */
   .we-get-married {
-    font-size: 65px;                       /* 🔒 khóa cứng */
-    transform: translate(110px, -220px) rotate(-10deg);
+    transform: translate(18vw, -32vh) rotate(-10deg);
+    font-size: 62px;
   }
 
   /* COUPLE NAMES */
   .hero .couple-names {
-    font-size: 35px;                       /* 🔒 khóa */
+    font-size: 39px;                       /* 🔒 khóa */
     --spread: 10px;                       /* 🔒 khóa */
+  }
+
+  .hero .wedding-date {
+    font-size: 28px;                       /* 🔒 khóa */
+  }
+
+  .info-sentences {
+    font-size: 42px; 
   }
 
   /* SAVE THE DATE */
@@ -1634,7 +1642,7 @@ header {
 /* SMALL MOBILE */
 @media (max-width: 570px) {
   .we-get-married {
-    transform: translate(15vw, -28vh) rotate(-10deg);
+    transform: translate(17vw, -31vh) rotate(-10deg);
     font-size: 62px;
   }
   
@@ -1658,7 +1666,7 @@ header {
 
 @media (max-width: 550px) {
   .we-get-married {
-    transform: translate(14vw, -27vh) rotate(-10deg);
+    transform: translate(16vw, -30vh) rotate(-10deg);
     font-size: 61px;
   }
   
@@ -1677,7 +1685,7 @@ header {
 
 @media (max-width: 520px) {
   .we-get-married {
-    transform: translate(13vw, -26vh) rotate(-10deg);
+    transform: translate(15vw, -29vh) rotate(-10deg);
     font-size: 60px;
   }
   
@@ -1696,7 +1704,7 @@ header {
 
 @media (max-width: 490px) {
   .we-get-married {
-    transform: translate(12vw, -25vh) rotate(-10deg);
+    transform: translate(14vw, -28vh) rotate(-10deg);
     font-size: 59px;
   }
   
@@ -1715,7 +1723,7 @@ header {
 
 @media (max-width: 460px) {
   .we-get-married {
-    transform: translate(12vw, -24vh) rotate(-10deg);
+    transform: translate(13vw, -27vh) rotate(-10deg);
     font-size: 58px;
   }
   
@@ -1734,7 +1742,7 @@ header {
 
 @media (max-width: 430px) {
   .we-get-married {
-    transform: translate(12vw, -23vh) rotate(-10deg);
+    transform: translate(12vw, -26vh) rotate(-10deg);
     font-size: 57px;
   }
   
@@ -1754,7 +1762,7 @@ header {
 /* pixel 4A */
 @media (max-width: 400px) {
   .we-get-married {
-    transform: translate(11vw, -22vh) rotate(-10deg);
+    transform: translate(11vw, -25vh) rotate(-10deg);
     font-size: 56px;
   }
   
